@@ -56,7 +56,7 @@ app.post('/api/items', async (req, res) => {
     await item.save();
     res.send(item);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(500);
   }
 });
@@ -67,7 +67,7 @@ app.get('/api/items', async (req, res) => {
     let items = await Item.find();
     res.send(items);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(500);
   }
 });
@@ -78,7 +78,7 @@ app.delete('/api/items/:id', async (req, res) => {
     let items = await Item.find();
     res.send(200);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(500);
   }
 });
@@ -86,7 +86,7 @@ app.delete('/api/items/:id', async (req, res) => {
 app.put('/api/items/:id', async (req, res) => {
   try {
     let item = await Item.findOne({_id:req.params.id});
-    console.log(req.body);
+    //console.log(req.body);
     item.title = req.body.title;
     item.creator = req.body.creator;
     item.ingredients = req.body.ingredients;
@@ -95,7 +95,7 @@ app.put('/api/items/:id', async (req, res) => {
     await item.save();
     res.send(200);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.sendStatus(500);
   }
 });
